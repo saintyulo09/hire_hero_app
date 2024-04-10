@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'util/job_card.dart';
 import 'util/recent_job_card.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -11,6 +12,8 @@ class HomePage extends StatefulWidget {
 
 class  HomePageState extends State<HomePage> {
   get child => null;
+
+  
 
   final List jobsForYou = [
     // [ companyName, jobTitle, logoImagePath, hourlyRate ]
@@ -36,43 +39,11 @@ class  HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-           const SizedBox(height: 75),
-
-           // app bar
-           Padding(
-            padding: const EdgeInsets.only(left: 25.0),
-            child: Container(
-              height: 50,
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.white),
-                borderRadius: BorderRadius.circular(12),
-                color: const Color.fromARGB(255, 215, 213, 213),
-              ),
-             child: Image.asset(
-              'lib/icons/menu_from_left.png',
-              color: const Color.fromARGB(255, 0, 0, 0),
-             ),
-            ),
-           ),
-
-           const SizedBox(height: 50),
+           const SizedBox(height: 10),
            
-          // discover a new path
-          const Padding(
-            padding: EdgeInsets.only(left: 25.0),
-            child: Text(
-              'Find Your Job!',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-              ),
-          ),
-
           // search bar
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Row(
               children: [
                 Expanded(
@@ -86,10 +57,10 @@ class  HomePageState extends State<HomePage> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           child: SizedBox(
-                            height: 30,
+                            height: 20,
                             child: Image.asset(
                               'lib/icons/search.png',
-                              color: const Color.fromARGB(255, 95, 94, 94),
+                              color: const Color.fromARGB(255, 65, 65, 65),
                               ),
                           ),
                         ),
@@ -108,21 +79,21 @@ class  HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 10,
                 ),
-                Container(
-                  height: 50,
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.grey[800],
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                child: Image.asset('lib/icons/preferences.png',
-                color: Colors.white,
-                ),
-                ),
+                //Container(
+                 // height: 50,
+                 // padding: const EdgeInsets.all(12),
+                 // decoration: BoxDecoration(
+                  //  color: Colors.grey[800],
+                  //  borderRadius: BorderRadius.circular(12),
+             //     ),
+              //  child: Image.asset('lib/icons/menu_from_left.png',
+             //   color: Colors.white,
+             //   ),
+            //    ),
               ],
             )
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 10),
 
           // for you -> job cards
             const Padding(
@@ -131,12 +102,12 @@ class  HomePageState extends State<HomePage> {
               'For You',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 15,
               ),
               ),
           ),
 
-          const SizedBox(height: 25),
+          const SizedBox(height: 5),
 
           // ignore: sized_box_for_whitespace
           Container(
@@ -149,13 +120,13 @@ class  HomePageState extends State<HomePage> {
                   companyName: jobsForYou[index][0],
                   jobTitle: jobsForYou[index][1],
                   logoImagePath: jobsForYou[index][2],
-                  hourlyRate: jobsForYou[index][3],
+                  hourlyRate: jobsForYou[index][3], filePath: '',
                 );
               },
               ),
           ),
 
-          const SizedBox(height: 50),
+          const SizedBox(height: 10),
 
           // recently add ->  job titles
             const Padding(
@@ -169,7 +140,7 @@ class  HomePageState extends State<HomePage> {
               ),
             ),
 
-          const SizedBox(height: 25),
+          const SizedBox(height: 5),
 
           Expanded(
             child: Padding(
